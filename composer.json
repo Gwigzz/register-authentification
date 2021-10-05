@@ -1,6 +1,6 @@
 {
-    "name": "grd/newletter",
-    "description": "new letters",
+    "name": "register/auth",
+    "description": "Litle project for authentification and login",
     "require": {},
     "autoload": {
         "psr-4": {
