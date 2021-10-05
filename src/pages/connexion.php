@@ -23,6 +23,11 @@ if (
     $userEmail = htmlspecialchars($_POST['userEmail']);
     $userPass = htmlspecialchars($_POST['userPass']);
 
+    // if not a real email
+    if (!filter_var($userEmail, FILTER_VALIDATE_EMAIL)) {
+        die("Erreur: Email not valide");
+    }
+
     $connPdo = new ConnexionBdd;
 
     $checkUser = $connPdo->connexionPdo();
@@ -32,24 +37,20 @@ if (
     $rowCount = $checkUser->rowCount();
 
     if ($rowCount === 1) {
-        if (filter_var($userEmail, FILTER_VALIDATE_EMAIL)) {
-            if (password_verify($userPass, $datas['userPass'])) {
+        if (password_verify($userPass, $datas['userPass'])) {
 
-                $_SESSION['privateMembre'] = [
-                    'id' => $datas['id'],
-                    'userName' => $datas['userName'],
-                    'userEmail' => $datas['userEmail'],
-                    'dateInscription' => $datas['dateInscription']
-                ];
+            $_SESSION['privateMembre'] = [
+                'id' => $datas['id'],
+                'userName' => $datas['userName'],
+                'userEmail' => $datas['userEmail'],
+                'dateInscription' => $datas['dateInscription']
+            ];
 
-                header('Location: /src/pages/privateProfil.php');
-                die();
-                //
-            } else {
-                die("Erreur: Password or email invalide");
-            }
+            header('Location: /src/pages/privateProfil.php');
+            die();
+            //
         } else {
-            die("Erreur: Email not valide");
+            die("Erreur: Password or email invalide");
         }
     } else {
         die("Erreur: Email or password invalide");
