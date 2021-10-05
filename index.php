@@ -1,0 +1,2 @@
+<?php header('Location: /src/pages/home.php');
+die();

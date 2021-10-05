@@ -1,0 +1,10 @@
+{
+    "name": "grd/newletter",
+    "description": "new letters",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/class/"
+        }
+    }
+}
