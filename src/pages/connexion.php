@@ -33,12 +33,13 @@ if (
     $checkUser = $connPdo->connexionPdo();
     $checkUser->execute(array($userEmail));
 
-    $datas = $checkUser->fetch();
-    $rowCount = $checkUser->rowCount();
+    $datas = $checkUser->fetch(); // get informations user
+    $rowCount = $checkUser->rowCount(); // check if user exist or not
 
     if ($rowCount === 1) {
         if (password_verify($userPass, $datas['userPass'])) {
 
+            // Creat a unique session
             $_SESSION['privateMembre'] = [
                 'id' => $datas['id'],
                 'userName' => $datas['userName'],
@@ -46,12 +47,14 @@ if (
                 'dateInscription' => $datas['dateInscription']
             ];
 
+            // if connexion ok, redirect to profil with session
             header('Location: /src/pages/privateProfil.php');
             die();
             //
         } else {
             die("Erreur: Password or email invalide");
         }
+        //
     } else {
         die("Erreur: Email or password invalide");
     }
