@@ -2,16 +2,17 @@
 
 namespace App;
 
-
 use App\ModelPdo;
 
+/**
+ * Connect DB and extends ModelPdo.php
+ */
 class ConnexionBdd extends ModelPdo
 {
     /**
-     * Prépare la connextion de l'utilisateur a PDO
-     * 
-     * @return PDO   $mysql = $this->pdo->prepare(
-     * "SELECT * FROM users WHERE userEmail = ?" );
+     * Prepare connexion for user FROM (table) "users" WHERE "userEmail" ?
+     * Shearch Email
+     * @return PDO
      */
     public function connexionPdo()
     {

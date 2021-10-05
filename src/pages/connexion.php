@@ -56,7 +56,6 @@ if (
     }
 }
 
-
 // render...
 $title = "_Connexion";
 $activeNav = 'connect';

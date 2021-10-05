@@ -2,9 +2,13 @@
 
 namespace App;
 
+/**
+ * This class is for RenderHtml
+ * 
+ * @return HTML Page in "src/pages/myPage.html.php"
+ */
 class RenderHtml
 {
-
     /**
      * Get render html
      * 

@@ -4,6 +4,9 @@ namespace App;
 
 use App\ConnexionBdd;
 
+/**
+ * This class is for Request DB, extends ConnexionBdd.php
+ */
 class RequestProfilPdo extends ConnexionBdd
 {
     /**

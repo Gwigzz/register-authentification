@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Function connPdo() connect DB
+ * 
+ * @return PDO
+ */
 function connPdo(): PDO
 {
     try {
