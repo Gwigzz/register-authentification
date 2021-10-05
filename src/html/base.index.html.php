@@ -17,17 +17,17 @@
             <div class="nav-container">
                 <nav>
                     <ul>
-                        <li><a class="<?php if ($activeNav == 'home') : ?>active-nav<?php endif; ?>" href="/src/pages/home.php">Acceuil</a></li>
+                        <li><a class="<?php if ($activeNav == 'home') : ?>active-nav<?php endif; ?>" href="/src/pages/home.php">Home</a></li>
 
                         <?php if (isset($_SESSION['privateMembre'])) : ?>
 
-                            <li><a class="<?php if ($activeNav == 'privateProfil') : ?>active-nav<?php endif; ?>" href="/src/pages/privateProfil.php">Mon profil</a></li>
-                            <li><a class="" href="/src/scripts/deconnexion.php">Deconnexion</a></li>
+                            <li><a class="<?php if ($activeNav == 'privateProfil') : ?>active-nav<?php endif; ?>" href="/src/pages/privateProfil.php">Profile</a></li>
+                            <li><a class="" href="/src/scripts/disconnect.php">Disconnect</a></li>
 
                         <?php else : ?>
 
-                            <li><a class="<?php if ($activeNav == 'connect') : ?>active-nav<?php endif; ?>" href="/src/pages/connexion.php">Connexion</a></li>
-                            <li><a class="<?php if ($activeNav == 'inscription') : ?>active-nav<?php endif; ?>" href="/src/pages/inscription.php">Inscription</a></li>
+                            <li><a class="<?php if ($activeNav == 'connect') : ?>active-nav<?php endif; ?>" href="/src/pages/connexion.php">Login</a></li>
+                            <li><a class="<?php if ($activeNav == 'inscription') : ?>active-nav<?php endif; ?>" href="/src/pages/inscription.php">Registration</a></li>
 
                         <?php endif; ?>
                     </ul>

@@ -15,8 +15,6 @@ if (isset($_GET['actionDelProfil']) && !empty($_GET['actionDelProfil'])) {
     // If $_SESSION[] == id in url = OK
     if ($_SESSION['privateMembre']['id'] == $getUrlProfil) {
 
-        echo "L'i dans l'url $getUrlProfil correspond bien a l'id de la SESSION";
-
         require_once(dirname(__FILE__) . '/../../vendor/autoload.php');
 
         $reqBddClass = new RequestProfilPdo;
@@ -40,19 +38,19 @@ if (isset($_GET['actionDelProfil']) && !empty($_GET['actionDelProfil'])) {
             $actionDelete->bindValue(':userEmail', $emailUser, PDO::PARAM_STR);
 
             if ($actionDelete->execute()) {
-                header('Location: /src/scripts/deconnexion.php?clear=');
+                header('Location: /src/scripts/disconnect.php?clear=');
                 die();
                 //
             } else {
-                die("Erreur: lors de l'execution de suppresion de profil");
+                die("Erreur: erreur executed delete action");
             }
             //
         } else {
-            die("Erreur: correspond pas !");
+            die(" Erreur: no match1 ");
         }
         //
     } else {
-        die("Erreur: L'ID dans l'url ne correspond pas la l'ID de la SESSION");
+        die(" Erreur: no match2 ");
     }
     //
 } else {

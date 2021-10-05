@@ -46,13 +46,13 @@ if (
                 die();
                 //
             } else {
-                die("Erreur: Password ou email invalide");
+                die("Erreur: Password or email invalide");
             }
         } else {
-            die("Erreur: Entrer une adresse Email valide");
+            die("Erreur: Email not valide");
         }
     } else {
-        die("Erreur: Email ou password invalide");
+        die("Erreur: Email or password invalide");
     }
 }
 

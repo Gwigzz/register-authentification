@@ -1,5 +1,4 @@
-<h1>Page d'acceuil</h1>
-<h2>Vous vous situez sur la page d'acceuil</h2>
+<h1>Home page</h1>
 
 <div class="container-home">
     <div class="img-container-home">

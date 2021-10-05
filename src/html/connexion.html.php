@@ -5,19 +5,19 @@
     <!-- Formulaire connexion -->
     <div class="container-form">
         <form action="" method="POST" class="thisForm">
-            <h2>Se connecter</h2>
+            <h2>Login</h2>
             <div class="blocLabel">
-                <label for="userEmail">Votre Email</label>
+                <label for="userEmail">You'r Email</label>
                 <input type="email" name="userEmail" placeholder="Votre email" id="nameInpute" />
             </div>
             <div class="blocLabel">
                 <label for="userPass">Password</label>
                 <input type="password" name="userPass" placeholder="Votre mot de passe">
             </div>
-            <button type="submit" name="btnValidForm">Se connecter</button>
+            <button type="submit" name="btnValidForm">Login</button>
             <ul>
-                <li><a href="/src/pages/inscription.php">Creer un compte</a></li>
-                <li><a href="#">Mot de passe oublié</a></li>
+                <li><a href="/src/pages/inscription.php">Create an account</a></li>
+                <li><a href="#">Forgot password</a></li>
             </ul>
         </form>
 
