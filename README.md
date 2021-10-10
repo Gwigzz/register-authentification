@@ -1,13 +1,17 @@
 
-##### Description #####
+## Description
+This project is simple, it contains a home page, a registration page and a login page.
+This project is far from being optimized and efficient, you can make any type of modification to improve it.
 
-this project is far from being optimized and efficient.
-It contains, a home page, a registration and login page, you will need to create a database with mysql. the table file is in "src / database / local_inscription.sql", launch it from your phpMyAdmin interface.
+### required before starting
+* PHP >= 7.2
+* phpMyAdmin >= 4.5
+* MySQL >= 5.7
 
-
+### Starting project
+You will need to create a database with MySQL, the table file is in "src / database / local_inscription.sql", launch it from your phpMyAdmin interface.
 
 ## Main files
-
 _____ in "src/class/"
 1. ConnexionBdd.php
 2. MessagePopup.php
