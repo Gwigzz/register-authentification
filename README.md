@@ -54,7 +54,7 @@ _____ in "src/scripts/"
 
 _____ in "src/styles/"
 1. "/css/style.css"
-2. "/js/" (empty)
+2. "/js/script.js"
 
 _____ in "vendor/"
 -REFERE TO => 
