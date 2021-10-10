@@ -10,9 +10,11 @@ It contains, a home page, a registration and login page, you will need to create
 
 _____ in "src/class/", includes :
 1. ConnexionBdd.php
-2. ModelPdo.php
-3. RenderHtml.php
-4. RequestProfilPdo.php
+2. MessagePopup.php
+3. ModelPdo.php
+4. Redirect.php
+5. RenderHtml.php
+6. RequestProfilPdo.php
 
 _____ in "src/database/", includes :
 1. getPdo.php
@@ -50,5 +52,5 @@ _____ in "src/styles/", includes :
 2. "/js/" (empty)
 
 _____ in "vendor/", includes :
--REFERE TO => https://getcomposer.org/doc/01-basic-usage.md
+-REFERE TO => [getcomposer.org] (https://getcomposer.org/doc/01-basic-usage.md)
 
