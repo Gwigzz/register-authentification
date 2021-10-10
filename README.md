@@ -6,7 +6,7 @@ It contains, a home page, a registration and login page, you will need to create
 
 
 
-// Main files =>
+## Main files =>
 
 _____ in "src/class/", includes :
 1. ConnexionBdd.php
