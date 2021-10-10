@@ -26,7 +26,7 @@ a:hover {
     text-decoration: underline;
 }
 
-input[name=userEmail], input[name="userPass"], input[name="userRepeatPass"], input[name="userName"] {
+input[name=userEmail], input[name="userPass"], input[name="userRepeatPass"], input[name="userName"], input[name="nameUser"], input[name="emailUser"] {
     width: 85%;
     padding: 0.6em;
     border-radius: 5px;
@@ -37,7 +37,7 @@ input[name=userEmail], input[name="userPass"], input[name="userRepeatPass"], inp
     transition: .2s;
 }
 
-input[name=userEmail]:focus, input[name="userPass"]:focus, input[name="userRepeatPass"]:focus, input[name="userName"]:focus {
+input[name=userEmail]:focus, input[name="userPass"]:focus, input[name="userRepeatPass"]:focus, input[name="userName"]:focus, input[name="nameUser"]:focus, input[name="emailUser"]:focus {
     border-top: 2px solid #ff5e00;
     /* blue = #055af8*/
     border-bottom: 2px solid #ff5e00;
@@ -69,6 +69,46 @@ button[name=btnValidForm]:hover {
 
 .container-nav-section {
     margin: 10px 2px 8px 5%;
+}
+
+/* span pseudo */
+
+.nameSpan {
+    /*  background-color: rgba(9, 255, 0, 0.63); */
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.2em;
+    margin: 0.2em;
+    text-decoration: underline;
+    font-size: 22px;
+    font-style: italic;
+    font-weight: 200;
+    text-transform: uppercase;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    opacity: 0.3;
+}
+
+/* span MessagePopup */
+
+.container-pop {
+    padding: 0.3em;
+    margin: 0.3em;
+    text-align: center;
+}
+
+.messagePop {
+    border-radius: 5px;
+    margin: 0.3em;
+    padding: 0.3em;
+}
+
+.error {
+    background-color: rgba(255, 17, 17, 0.822);
+}
+
+.success {
+    background-color: rgb(51, 255, 0);
 }
 
 .h1-newsletters {
@@ -126,19 +166,6 @@ button[name=btnValidForm]:hover {
     font-size: 23px;
 }
 
-@media screen and (max-width: 500px) {
-    button[name=btnValidForm] {
-        width: auto;
-    }
-    .thisForm {
-        width: 95%;
-    }
-    .container-nav-section {
-        margin: 3px 0 5px 0;
-        text-align: center;
-    }
-}
-
 /* Home */
 
 .container-home {
@@ -158,10 +185,38 @@ button[name=btnValidForm]:hover {
     max-height: 250px;
     border-radius: 5px;
     box-shadow: 2px 5px 30px 10px rgba(128, 128, 128, 0.801);
+    opacity: 0.6;
+    transition-duration: 1s;
+}
+
+.imgHome:hover {
+    /* transform: rotate(360deg); */
+    /* transform: scale(1.1, 1.1); */
+    /* transform: rotateX(10deg); */
+    transition-duration: 1s;
+    transform: scale(1.1, 1.1);
+    opacity: 1;
 }
 
 /* Profil */
 
 #spanName {
     font-style: italic;
+}
+
+@media screen and (max-width: 500px) {
+    button[name=btnValidForm] {
+        width: auto;
+    }
+    .thisForm {
+        width: 95%;
+    }
+    .container-nav-section {
+        margin: 3px 0 5px 0;
+        text-align: center;
+    }
+    .nameSpan {
+        position: relative;
+        margin: 8px 1px 3px 1px;
+    }
 }

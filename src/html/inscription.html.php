@@ -1,4 +1,7 @@
 <h1 style="font-size:18px;">Authentification</h1>
+
+<?= $messagePop->messagePop(); ?>
+
 <!-- Page div-->
 <div class="container-page">
 

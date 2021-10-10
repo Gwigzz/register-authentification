@@ -1,6 +1,9 @@
 <h1 style="font-size:18px;">Connexion</h1>
+
 <!-- Page div-->
 <div class="container-page">
+
+    <?= $messagePop->messagePop(); ?>
 
     <!-- Formulaire connexion -->
     <div class="container-form">

@@ -6,13 +6,14 @@ if (isset($_SESSION['privateMembre'])) {
     die();
 }
 
-use App\ConnexionBdd;
+use App\Redirect;
 use App\RenderHtml;
+use App\ConnexionBdd;
+use App\MessagePopup;
 
 require_once(dirname(__FILE__) . '/../../vendor/autoload.php');
 
 $render = new RenderHtml;
-
 
 if (
     isset($_POST['btnValidForm']) && empty($_POST['btnValidForm'])
@@ -27,22 +28,24 @@ if (
     $userPass = htmlspecialchars($_POST['userPass']);
     $userRepeatPass = htmlspecialchars($_POST['userRepeatPass']);
 
+    // Class for redirections
+    $redirectHeader = new Redirect;
 
     // controle lenght userName
     if (strlen($userName) < 3) {
-        die("Erreur: le nom doit contenir minimum 3 à 10 caractères maximum");
+        $redirectHeader->redirectDie('inscription.php?pop=erStr');
     } elseif (strlen($userName) > 10) {
-        die("Erreur: le nom doit contenir minimum 3 à 10 caractères maximum");
+        $redirectHeader->redirectDie('inscription.php?pop=erStr');
     }
 
     // control its a real email or not
     if (!filter_var($userEmail, FILTER_VALIDATE_EMAIL)) {
-        die("Erreur: veuillez entrez une adresse Email valide");
+        die('Erreur: no validate Email');
     }
 
     // repeat same password
     if ($userPass !== $userRepeatPass) {
-        die("Erreur: Retaper le même mot de passe");
+        $redirectHeader->redirectDie('inscription.php?pop=erPass');
     }
 
     // hash password
@@ -57,7 +60,7 @@ if (
 
     // verif email with count
     if ($rowExecuteEmailExist >= 1) {
-        die("Erreur: l'email est déjà existante");
+        $redirectHeader->redirectDie('inscription.php?pop=erAlreadyEmail');
     }
 
     // prepare request insert
@@ -79,9 +82,7 @@ if (
 
     // validation, or not.
     if ($insertBdd == true) {
-        //echo "Validation OK";
-        header('Location: /src/pages/connexion.php');
-        die();
+        $redirectHeader->redirectDie('connexion.php?pop=valRegister');
     } else {
         echo "Erreur lors du traitement d'information";
     }
@@ -89,12 +90,14 @@ if (
 
 // render...
 $title = "_Inscription"; // title page
-$activeNav = "inscription";
+$activeNav = "inscription"; // active nav CSS
+$messagePop = new MessagePopup; // for err message
 
 $render->renderHtml(
     'inscription.html.php',
     [
         'title' => $title,
-        'activeNav' => $activeNav
+        'activeNav' => $activeNav,
+        'messagePop' => $messagePop
     ]
 );

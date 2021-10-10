@@ -1,7 +1,9 @@
 <?php
 
+use App\Redirect;
 use App\RenderHtml;
 use App\ConnexionBdd;
+use App\MessagePopup;
 
 session_start();
 
@@ -13,6 +15,7 @@ if (isset($_SESSION['privateMembre'])) {
 require_once(dirname(__FILE__) . '../../../vendor/autoload.php');
 
 $render = new RenderHtml;
+$redirectHeader = new Redirect;
 
 // traitement connexion
 if (
@@ -48,26 +51,25 @@ if (
             ];
 
             // if connexion ok, redirect to profil with session
-            header('Location: /src/pages/privateProfil.php');
-            die();
-            //
+            $redirectHeader->redirectDie('privateProfil.php');
         } else {
-            die("Erreur: Password or email invalide");
+            $redirectHeader->redirectDie('connexion.php?pop=erLog');
         }
-        //
     } else {
-        die("Erreur: Email or password invalide");
+        $redirectHeader->redirectDie('connexion.php?pop=erLog');
     }
 }
 
 // render...
 $title = "_Connexion";
 $activeNav = 'connect';
+$messagePop = new MessagePopup;
 
 $render->renderHtml(
     'connexion.html.php',
     [
         "title" => $title,
-        "activeNav" => $activeNav
+        "activeNav" => $activeNav,
+        "messagePop" => $messagePop
     ]
 );

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=no">
     <link rel="icon" href="/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="/src/styles/css/style.css" />
     <title><?php if (isset($title)) : ?><?= $title ?><?php else : ?><?= "No title"; ?><?php endif ?></title>
@@ -34,19 +34,32 @@
                 </nav>
             </div>
         </section>
+        <span class="nameSpan" id="colorSpanName"><?php if (isset($_SESSION['privateMembre'])) : ?><?= $_SESSION['privateMembre']['userName'] ?><?php endif ?></span>
     </div>
     <h1 class="h1-newsletters">_News Letters</h1>
 
     <!-- Content -->
     <?= $content ?>
 
-
-
     <!-- JS focus form inscription -->
     <script>
         window.onload = function() {
             let focusInput = document.getElementById("nameInpute").focus();
         }
+    </script>
+
+    <!-- JS color span name -->
+    <script>
+        let i = 0;
+
+        function ChangeColorName() {
+            let docColor = document.getElementById("colorSpanName");
+            let tableColor = ["grey", "orange", "#00c3ff"];
+
+            docColor.style.color = tableColor[i];
+            i = (i + 1) % tableColor.length;
+        }
+        setInterval(ChangeColorName, 1000);
     </script>
 
 </body>
