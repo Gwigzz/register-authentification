@@ -3,7 +3,7 @@
 This project is simple, it contains a home page, a registration page and a login page.
 This project is far from being optimized and efficient, you can make any type of modification to improve it.
 
-### required before starting
+### Required before starting
 * PHP >= 7.2
 * phpMyAdmin >= 4.5
 * MySQL >= 5.7
