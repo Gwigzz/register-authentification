@@ -53,5 +53,5 @@ _____ in "src/styles/", includes :
 
 _____ in "vendor/", includes :
 -REFERE TO => 
-[https://getcomposer.org/doc/01-basic-usage.md] (https://getcomposer.org/doc/01-basic-usage.md)
+[getcomposer.org](https://getcomposer.org/doc/01-basic-usage.md)
 
