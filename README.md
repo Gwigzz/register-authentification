@@ -52,5 +52,6 @@ _____ in "src/styles/", includes :
 2. "/js/" (empty)
 
 _____ in "vendor/", includes :
--REFERE TO => [getcomposer.org] (https://getcomposer.org/doc/01-basic-usage.md)
+-REFERE TO => 
+[getcomposer.org!] (https://getcomposer.org/doc/01-basic-usage.md)
 
