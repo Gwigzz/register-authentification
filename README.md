@@ -19,6 +19,7 @@ _____ in "src/class/"
 4. Redirect.php
 5. RenderHtml.php
 6. RequestProfilPdo.php
+7. UserSession.php
 
 _____ in "src/database/"
 1. getPdo.php
