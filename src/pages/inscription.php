@@ -56,6 +56,8 @@ if (
     // prepare request check if email exist or not
     $checkEmailExist = $connexionBdd->getPdo()->prepare("SELECT * FROM users WHERE userEmail = ?");
     $checkEmailExist->execute(array($userEmail));
+
+    // row count DB for Email
     $rowExecuteEmailExist = $checkEmailExist->rowCount();
 
     // verif email with count
@@ -84,7 +86,7 @@ if (
     if ($insertBdd == true) {
         $redirectHeader->redirectDie('connexion.php?pop=valRegister');
     } else {
-        echo "Erreur lors du traitement d'information";
+        die("Erreur: no request.");
     }
 }
 

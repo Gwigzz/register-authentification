@@ -11,6 +11,9 @@ class ModelPdo
 {
     protected $pdo;
 
+    /**
+     * Connect to PDO DB from getPdo.php.
+     */
     public function __construct()
     {
         $this->pdo = connPdo();

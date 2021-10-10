@@ -41,26 +41,8 @@
     <!-- Content -->
     <?= $content ?>
 
-    <!-- JS focus form inscription -->
-    <script>
-        window.onload = function() {
-            let focusInput = document.getElementById("nameInpute").focus();
-        }
-    </script>
-
-    <!-- JS color span name -->
-    <script>
-        let i = 0;
-
-        function ChangeColorName() {
-            let docColor = document.getElementById("colorSpanName");
-            let tableColor = ["grey", "orange", "#00c3ff"];
-
-            docColor.style.color = tableColor[i];
-            i = (i + 1) % tableColor.length;
-        }
-        setInterval(ChangeColorName, 1000);
-    </script>
+    <!-- JS  -->
+    <script src="/src/styles/js/script.js"></script>
 
 </body>
 
