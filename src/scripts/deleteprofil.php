@@ -32,7 +32,6 @@ if (isset($_GET['actionDelProfil']) && !empty($_GET['actionDelProfil'])) {
         $rowCountUser = $actionReq->rowCount();
 
         if ($rowCountUser === 1) {
-            /*  echo "cela correspond !"; */
             $actionDelete = $reqBddClass->ReqActionDeleteProfil();
             $actionDelete->bindValue(':id', $getUrlProfil, PDO::PARAM_INT);
             $actionDelete->bindValue(':userEmail', $emailUser, PDO::PARAM_STR);

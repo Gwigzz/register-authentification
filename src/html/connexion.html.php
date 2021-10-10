@@ -11,11 +11,11 @@
             <h2>Login</h2>
             <div class="blocLabel">
                 <label for="userEmail">You'r Email</label>
-                <input type="email" name="userEmail" placeholder="Votre email" id="nameInpute" />
+                <input type="email" name="userEmail" placeholder="john@email.fr" id="nameInpute" />
             </div>
             <div class="blocLabel">
                 <label for="userPass">Password</label>
-                <input type="password" name="userPass" placeholder="Votre mot de passe">
+                <input type="password" name="userPass" placeholder="You'r password">
             </div>
             <button type="submit" name="btnValidForm">Login</button>
             <ul>
