@@ -1,19 +1,19 @@
 <?php
 session_start();
 
-if (isset($_SESSION['privateMembre'])) {
-    header('Location: /src/pages/privateProfil.php');
-    die();
-}
-
 use App\Redirect;
 use App\RenderHtml;
+use App\UserSession;
 use App\ConnexionBdd;
 use App\MessagePopup;
 
 require_once(dirname(__FILE__) . '/../../vendor/autoload.php');
 
+$verifSession = new UserSession;
 $render = new RenderHtml;
+
+// verif session
+$verifSession->okSession('privateMembre', 'privateProfil.php');
 
 if (
     isset($_POST['btnValidForm']) && empty($_POST['btnValidForm'])

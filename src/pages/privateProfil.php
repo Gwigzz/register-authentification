@@ -1,17 +1,16 @@
 <?php
 
 use App\RenderHtml;
+use App\UserSession;
 
 session_start();
 
-if (!isset($_SESSION['privateMembre'])) {
-    header('Location: /index.php');
-    die();
-}
-
 require_once(dirname(__FILE__) . '/../../vendor/autoload.php');
 
-$render = new RenderHtml;
+$verifSession = new UserSession; // session
+$verifSession->notSession('privateMembre', 'home.php');
+
+$render = new RenderHtml; // render html
 
 
 // render...

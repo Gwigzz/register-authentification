@@ -6,9 +6,9 @@ It contains, a home page, a registration and login page, you will need to create
 
 
 
-## Main files =>
+## Main files
 
-_____ in "src/class/", includes :
+_____ in "src/class/"
 1. ConnexionBdd.php
 2. MessagePopup.php
 3. ModelPdo.php
@@ -16,13 +16,13 @@ _____ in "src/class/", includes :
 5. RenderHtml.php
 6. RequestProfilPdo.php
 
-_____ in "src/database/", includes :
+_____ in "src/database/"
 1. getPdo.php
 2. local_inscription.sql ===>
 *  If you want to fast import table users, start you'r phpMyAdmin, create a DB named "local_inscription", open this, and Import from "local_inscription.sql"
 3. README.txt
 
-_____ in "src/html/", includes :
+_____ in "src/html/"
 1. base.index.html.php
 2. connexion.html.php
 3. home.html.php
@@ -30,28 +30,28 @@ _____ in "src/html/", includes :
 5. privateProfil.html.php
 6. README.txt
 
-_____ in "src/img/", includes :
+_____ in "src/img/"
 1. tech.jpg
 2. world1.jpg
 3. README.txt
 
-_____ in "src/pages/", includes :
+_____ in "src/pages/"
 1. connexion.php
 2. home.php
 3. inscription.php
 4. privateProfil.php
 5. README.txt
 
-_____ in "src/scripts/", includes :
+_____ in "src/scripts/"
 1. deconnexion.php
 2. deleteprofil.php
 3. README.txt
 
-_____ in "src/styles/", includes :
+_____ in "src/styles/"
 1. "/css/style.css"
 2. "/js/" (empty)
 
-_____ in "vendor/", includes :
+_____ in "vendor/"
 -REFERE TO => 
 [getcomposer.org](https://getcomposer.org/doc/01-basic-usage.md)
 

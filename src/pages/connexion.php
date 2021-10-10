@@ -2,20 +2,19 @@
 
 use App\Redirect;
 use App\RenderHtml;
+use App\UserSession;
 use App\ConnexionBdd;
 use App\MessagePopup;
 
 session_start();
 
-if (isset($_SESSION['privateMembre'])) {
-    header('Location: /');
-    die();
-}
-
 require_once(dirname(__FILE__) . '../../../vendor/autoload.php');
 
-$render = new RenderHtml;
-$redirectHeader = new Redirect;
+$verifSession = new UserSession; // verif session
+$verifSession->okSession('privateMembre', 'home.php');
+
+$render = new RenderHtml; // render
+$redirectHeader = new Redirect; // redirect
 
 // traitement connexion
 if (
@@ -39,25 +38,26 @@ if (
     $datas = $checkUser->fetch(); // get informations user
     $rowCount = $checkUser->rowCount(); // check if user exist or not
 
-    if ($rowCount === 1) {
-        if (password_verify($userPass, $datas['userPass'])) {
-
-            // Creat a unique session
-            $_SESSION['privateMembre'] = [
-                'id' => $datas['id'],
-                'userName' => $datas['userName'],
-                'userEmail' => $datas['userEmail'],
-                'dateInscription' => $datas['dateInscription']
-            ];
-
-            // if connexion ok, redirect to profil with session
-            $redirectHeader->redirectDie('privateProfil.php');
-        } else {
-            $redirectHeader->redirectDie('connexion.php?pop=erLog');
-        }
-    } else {
+    // if not user, redirect
+    if ($rowCount !== 1) {
         $redirectHeader->redirectDie('connexion.php?pop=erLog');
     }
+
+    // if not the same password, redirect
+    if (!password_verify($userPass, $datas['userPass'])) {
+        $redirectHeader->redirectDie('connexion.php?pop=erLog');
+    }
+
+    // Creat a unique session with datas user
+    $_SESSION['privateMembre'] = [
+        'id' => $datas['id'],
+        'userName' => $datas['userName'],
+        'userEmail' => $datas['userEmail'],
+        'dateInscription' => $datas['dateInscription']
+    ];
+
+    // if connexion ok, redirect to profil with session
+    $redirectHeader->redirectDie('privateProfil.php');
 }
 
 // render...
