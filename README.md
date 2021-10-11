@@ -9,7 +9,7 @@ This project is far from being optimized and efficient, you can make any type of
 * MySQL >= 5.7
 
 ### Starting project
-You will need to create a database with MySQL, the table file is in "src / database / local_inscription.sql", launch it from your phpMyAdmin interface.
+* Copy file in "src/database/local_inscription.sql", start phpMyAdmin, create a DB named "local_inscription", open this, and Import from "local_inscription.sql"
 
 ## Main files
 _____ in "src/class/"
@@ -24,7 +24,6 @@ _____ in "src/class/"
 _____ in "src/database/"
 1. getPdo.php
 2. local_inscription.sql ===>
-*  If you want to fast import table users, start you'r phpMyAdmin, create a DB named "local_inscription", open this, and Import from "local_inscription.sql"
 3. README.txt
 
 _____ in "src/html/"
