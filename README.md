@@ -9,7 +9,7 @@ This project is far from being optimized and efficient, you can make any type of
 * MySQL >= 5.7
 
 ### Starting project
-* Copy file in "src/database/local_inscription.sql", start phpMyAdmin, create a DB named "local_inscription", open this, and Import from "local_inscription.sql"
+* Copy file in "src/database/local_inscription.sql", start phpMyAdmin, create a DB named "local_inscription", open this, and Import from "local_inscription.sql".
 
 ## Main files
 _____ in "src/class/"
